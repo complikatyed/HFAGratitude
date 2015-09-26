@@ -41,6 +41,13 @@ GEM
     bcrypt (3.1.7)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bitters (1.0.0)
+      bourbon (>= 3.2)
+      sass (>= 3.2)
+      thor
+    bourbon (4.2.3)
+      sass (~> 3.4)
+      thor
     builder (3.2.2)
     capybara (2.5.0)
       mime-types (>= 1.16)
@@ -86,6 +93,9 @@ GEM
     multi_json (1.11.2)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
+    neat (1.7.2)
+      bourbon (>= 4.0)
+      sass (>= 3.3)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
     oauth (0.4.7)
@@ -184,6 +194,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bitters
+  bourbon
   capybara
   coffee-rails (~> 4.1.0)
   database_cleaner
@@ -191,6 +203,7 @@ DEPENDENCIES
   faker
   jquery-rails
   launchy
+  neat
   pg
   rails (= 4.2.2)
   rspec-rails
