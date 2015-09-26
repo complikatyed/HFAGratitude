@@ -1,14 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
   <title>HFAGratitude</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <header class="centered-navigation" role="banner">
+  <h1 class="logo">HFA Alumni Spirit</h1>
+  </header>
+  <p class="notice">
+    <%= notice %>
+  </p>
+  <p class="alert">
+    <%= alert %>
+  </p>
 
-<%= yield %>
+  <%= yield %>
+  <footer>
+    <%= link_to '"Hume-Fogg, just a bunch of nerds having a good time."', "http://humefogghs.mnps.org/pages/Hume_Fogg_Magnet_High_School" %>
+  </footer>
 
 </body>
 </html>
