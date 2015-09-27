@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  
+  get 'password_resets/create'
+  get 'password_resets/edit'
+  get 'password_resets/update'
+
   get 'users/new'
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -9,6 +14,7 @@ Rails.application.routes.draw do
 
   resource :user_session, only: [:new, :create, :destroy]
   resources :users, only: [:new, :create]
+  resources :password_resets
 
   get 'home' => 'home#index', as: 'home'
   get 'landing/index'

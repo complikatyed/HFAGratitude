@@ -1,10 +1,9 @@
 class User < ActiveRecord::Base
   authenticates_with_sorcery!
 
-  validates :email, :name, presence: true
-  validates :name, length: { minimum: 2 }
-  validates :email, format: { with: /.+@.+\..+/, message: "must be an email address" }, uniqueness: true
-  validates :name, uniqueness: true
-  validates :password, confirmation: true
-  validates :password, :password_confirmation, presence: { on: :create }
+  validates :password, length: { minimum: 3 }, if: -> { new_record? || changes["password"] }
+  validates :password, confirmation: true, if: -> { new_record? || changes["password"] }
+  validates :password_confirmation, presence: true, if: -> { new_record? || changes["password"] }
+
+  validates :email, uniqueness: true
 end
