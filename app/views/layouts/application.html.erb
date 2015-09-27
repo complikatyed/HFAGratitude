@@ -9,7 +9,44 @@
 </head>
 <body>
   <header class="centered-navigation" role="banner">
-  <h1 class="logo">HFA Alumni Spirit</h1>
+  <div class="centered-navigation-wrapper">
+      <a href="#" class="mobile-seal">
+        <%= image_tag("seal_small.png", :alt => "Hume-Fogg Magnet seal") %>
+      </a>
+      <a href="#" class="centered-navigation-mobile-menu">MENU</a>
+        <nav role="navigation">
+          <ul class="centered-navigation-menu">
+            <% if !logged_in? %>
+              <% unless controller_name.start_with? "user" %>
+                <li class="nav-link">
+                  <%= link_to "It's my first visit", new_user_path %>
+                </li>
+              <% end %>
+
+              <li class="nav-link seal">
+                <%= image_tag("seal_small.png", :alt => "Hume-Fogg Magnet seal") %>
+              </li>
+
+              <% unless controller_name.start_with? "user" %>
+                <li class="nav-link">
+                  <%= link_to "I'm a returning nerd!", new_user_session_path %>
+                </li>
+              <% end %>
+
+            <% else %>
+
+              <li class="nav-link">
+                <%= link_to "I'm done for today.", user_session_path, method: :delete %>
+              <li class="nav-link seal">
+                <%= image_tag("seal_small.png", :alt => "Hume-Fogg Magnet seal") %></li>
+              <li class="nav-link">
+                <%= link_to "See the project code.", "https://github.com/complikatyed/quizlytics" %>
+              </li>
+
+            <% end %>
+          </ul>
+        </nav>
+      </div>
   </header>
   <p class="notice">
     <%= notice %>
@@ -19,9 +56,16 @@
   </p>
 
   <%= yield %>
-  <footer>
-    <%= link_to '"Hume-Fogg, just a bunch of nerds having a good time."', "http://humefogghs.mnps.org/pages/Hume_Fogg_Magnet_High_School" %>
-  </footer>
+  <footer class="centered-navigation">
+      <div class="centered-navigation-wrapper">
+        <ul class="centered-navigation-menu padded">
+          <li class="padded">
+            <%= link_to "STILL just a bunch of nerds having a good time.", "http://humefogghs.mnps.org/pages/Hume_Fogg_Magnet_High_School" %>
+
+          </li>
+        </ul>
+      </div>
+    </footer>
 
 </body>
 </html>

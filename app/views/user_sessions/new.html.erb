@@ -1,0 +1,18 @@
+<div class="users_base">
+  <h1 class="white"> Welcome Back, Nerd Friend!</h1>
+  <h2 class="blue">Please verify your identity below.</h2>
+
+  <div class="left_user_session">
+  <%= simple_form_for @user, url: user_session_path do |f| %>
+    <%= f.input :email, placeholder: "What's your email address?", input_html: { class: 'user_first' }  %>
+    <%= f.input :password, placeholder: "What's your password?", input_html: { class: 'user' }  %>
+    <%= f.button :submit, "Let's do this!", class: "user" %>
+  <% end %>
+  </div>
+
+  <div class="right_user_session">
+    <%= image_tag("HFAJersey
+    .jpg", :alt => "Hume-Fogg basketball jersey") %>
+  </div>
+
+</div>

@@ -1,0 +1,36 @@
+.home_base {
+  @include outer-container;
+  padding: 40px 0px 40px 0px;
+}
+
+.left_user_session {
+  @include span-columns(6);
+    @include shift(1);
+  text-align: center;
+  margin-top: 25px;
+}
+
+.right_user_session {
+  @include span-columns(4);
+
+  img {
+    border: solid $dark-blue 5px;
+    max-width: 100%;
+  }
+}
+
+h1.user_session,
+h2.user_session {
+  padding: 5px 0px 5px 0px;
+  text-align: center;
+  color: $dark-blue;
+}
+
+h1.user_session {
+  font-size: 2em;
+}
+
+h2.user_session {
+  font-size: 1em;
+  margin: 30px 0px;
+}
