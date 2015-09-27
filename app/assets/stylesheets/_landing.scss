@@ -1,0 +1,32 @@
+.outer {
+  @include outer-container;
+  @include background-image(asset-url('blue_glass.jpg'));
+
+}
+
+.logo {
+  @include span-columns(8);
+    @include shift(2);
+  @include background(radial-gradient(white, #FBF1D0) left repeat);
+  text-align: center;
+  margin-top: 70px;
+  margin-bottom: 70px;
+  @include border-top-radius(5px);
+  @include border-right-radius(5px);
+  @include border-bottom-radius(5px);
+  @include border-left-radius(5px);
+  border: solid #2D2F54 2px;
+  padding: 45px 0px 40px 0px;
+  h1 {
+    color: #2D2F54;
+    font-family: "Diplomata";
+    font-size: 3em;
+    margin: 40px 0px 50px 0px;
+  }
+  h3 {
+    color: #21316E;
+  }
+}
+
+// Need to add media queries that include logo font size
+
